@@ -2,7 +2,7 @@ function Navigation(props) {
   return (
     <div
       className={`${
-        !props.projectsInView && "hidden "
+        !props.mainSectionInView && "hidden "
       } sticky h-20 top-1/2 text-sm`}
     >
       <div className="absolute left-5 w-24">
