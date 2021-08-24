@@ -26,6 +26,7 @@ function App() {
             <a
               href="https://github.com/johnnydevster"
               target="_blank"
+              rel="noreferrer"
               className="w-6 ml-12 fill-current cursor-pointer hover:text-yellow-200 text-yellow-300"
             >
               <GitHub />
@@ -33,6 +34,7 @@ function App() {
             <a
               href="https://www.linkedin.com/in/johnny-backlund-3b8221179/"
               target="_blank"
+              rel="noreferrer"
               className="w-6 ml-5 fill-current text-yellow-300 cursor-pointer hover:text-yellow-200"
             >
               <LinkedIn />

@@ -5,7 +5,7 @@ import personar from "./static/personar_demo.PNG";
 
 const projects = [
   {
-    name: "Personar",
+    name: "Persona",
     description: "Personality test",
     paragraph: [
       "A personality test based on the big five personality traits.",

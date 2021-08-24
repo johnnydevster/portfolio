@@ -17,7 +17,7 @@ function SocialBar(props) {
   };
 
   return (
-    <div className={`sticky h-20 top-1/2`}>
+    <div className={`absolute top-26 h-20 hidden md:block `}>
       <AnimatePresence>
         {props.mainSectionInView && (
           <motion.div
@@ -25,18 +25,20 @@ function SocialBar(props) {
             animate={animate}
             initial={initial}
             exit={initial}
-            className={`absolute right-5`}
+            className={`absolute`}
           >
             <a
-              className={`w-6 my-3 flex fill-current text-yellow-300`}
+              className={`w-6 my-3 flex fill-current text-blue-300 hover:text-blue-100 transition-all`}
               href="https://github.com/johnnydevster"
+              rel="noreferrer"
               target="_blank"
             >
               <GitHub />
             </a>
             <a
-              className={`w- my-3 flex fill-current text-yellow-300`}
+              className={`w- my-3 flex fill-current text-blue-300 hover:text-blue-100 transition-all`}
               href="https://www.linkedin.com/in/johnny-backlund-3b8221179/"
+              rel="noreferrer"
               target="_blank"
             >
               <LinkedIn />

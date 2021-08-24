@@ -1,6 +1,7 @@
 import ProjectCard from "./ProjectCard";
 import projects from "./projectsData";
 import Navigation from "./Navigation";
+import AboutMe from "./AboutMe";
 import SocialBar from "./SocialBar";
 import { useEffect, useState, useRef } from "react";
 import { useInView, InView } from "react-intersection-observer";
@@ -33,20 +34,6 @@ function Projects(props) {
     contactEntry.target.scrollIntoView({ behavior: "smooth" });
   }
 
-  /*
-  useEffect(() => {
-    console.log(`Projects section inView: ${projectsInView}`);
-  }, [projectsInView]);
-
-  useEffect(() => {
-    console.log(`About me section inView: ${aboutMeInView}`);
-  }, [aboutMeInView]);
-
-  useEffect(() => {
-    console.log(`Contact section inView: ${contactInView}`);
-  }, [contactInView]);
-  */
-
   return (
     <div className="projects text-blue-200 text-xl relative inset-0 pt-3 pb-6 flex-col">
       <InView
@@ -56,8 +43,10 @@ function Projects(props) {
         }}
       >
         {({ inView, ref, entry }) => (
-          <div ref={ref} className="relative max-w-xl mx-auto p-5 flex">
-            <SocialBar mainSectionInView={mainSectionInView} />
+          <div
+            ref={ref}
+            className="relative md:-left-14 max-w-2xl mx-auto p-5 flex"
+          >
             <div>
               <div className="flex items-center">
                 <div className="flex-shrink-0">
@@ -69,6 +58,7 @@ function Projects(props) {
                 {projects.map((project, i) => {
                   return (
                     <ProjectCard
+                      key={i}
                       projectNo={i}
                       name={project.name}
                       description={project.description}
@@ -81,8 +71,8 @@ function Projects(props) {
                   );
                 })}
               </section>
-              <div ref={aboutMeRef} className="h-96 mb-96">
-                About me section
+              <div ref={aboutMeRef} className="">
+                <AboutMe />
               </div>
               <div ref={contactRef} className="h-96 mb-96">
                 Contact section

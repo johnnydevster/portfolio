@@ -1,9 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
+import SocialBar from "./SocialBar";
 import { useEffect, useState } from "react";
 
 function Navigation(props) {
-  const [animateX, setAnimateX] = useState({ x: "100%" });
-
   const list = {
     visible: {
       opacity: 1,
@@ -38,17 +37,8 @@ function Navigation(props) {
     hidden: { opacity: 0, x: -100 },
   };
 
-  useEffect(() => {
-    if (props.mainSectionInView) {
-      setAnimateX({ x: 0 });
-    }
-    if (!props.mainSectionInView) {
-      setAnimateX({ x: "100%" });
-    }
-  }, [props.mainSectionInView]);
-
   return (
-    <div className={`sticky h-20 top-1/2 text-sm`}>
+    <div className={`hidden md:block sticky h-20 top-1/2 text-sm`}>
       <AnimatePresence>
         {props.mainSectionInView && (
           <motion.div
@@ -103,6 +93,7 @@ function Navigation(props) {
             >
               Back to top
             </motion.div>
+            <SocialBar mainSectionInView={props.mainSectionInView} />
           </motion.div>
         )}
       </AnimatePresence>
