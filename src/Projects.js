@@ -1,7 +1,8 @@
 import ProjectCard from "./ProjectCard";
 import projects from "./projectsData";
 import Navigation from "./Navigation";
-import { useEffect, useState } from "react";
+import SocialBar from "./SocialBar";
+import { useEffect, useState, useRef } from "react";
 import { useInView, InView } from "react-intersection-observer";
 
 function Projects(props) {
@@ -19,6 +20,18 @@ function Projects(props) {
   const [backToTopRef, backToTopInView, backToTopEntry] = useInView({
     threshold: 0.5,
   });
+
+  function scrollToProjects() {
+    projectsEntry.target.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function scrollToAboutMe() {
+    aboutMeEntry.target.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function scrollToContact() {
+    contactEntry.target.scrollIntoView({ behavior: "smooth" });
+  }
 
   /*
   useEffect(() => {
@@ -44,6 +57,7 @@ function Projects(props) {
       >
         {({ inView, ref, entry }) => (
           <div ref={ref} className="relative max-w-xl mx-auto p-5 flex">
+            <SocialBar mainSectionInView={mainSectionInView} />
             <div>
               <div className="flex items-center">
                 <div className="flex-shrink-0">
@@ -83,6 +97,10 @@ function Projects(props) {
               aboutMeInView={aboutMeInView}
               contactInView={contactInView}
               backToTopInView={backToTopInView}
+              scrollToProjects={scrollToProjects}
+              scrollToAboutMe={scrollToAboutMe}
+              scrollToContact={scrollToContact}
+              scrollToTop={props.scrollToTop}
             />
           </div>
         )}

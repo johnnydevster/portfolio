@@ -5,6 +5,13 @@ import { useRef } from "react";
 
 function App() {
   const projectsRef = useRef();
+  const topRef = useRef();
+
+  function scrollToTop() {
+    if (topRef.current) {
+      topRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
   function scrollToProjects() {
     if (projectsRef.current) {
@@ -13,7 +20,7 @@ function App() {
   }
   return (
     <div>
-      <div className="main h-screen w-full absolute z-0">
+      <div ref={topRef} className="main h-screen w-full absolute z-0">
         <header className="w-full h-12 z-20 absolute flex items-center justify-between">
           <div className="flex fill-current text-yellow-300">
             <a
@@ -61,7 +68,7 @@ function App() {
           </div>
         </div>
         <div ref={projectsRef}>
-          <Projects />
+          <Projects scrollToTop={scrollToTop} />
         </div>
       </div>
     </div>
