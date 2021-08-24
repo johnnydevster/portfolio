@@ -14,7 +14,7 @@ function ProjectCard(props) {
         </div>
       </div>
       <div className={`relative flex ${isEven && "justify-end"}`}>
-        <div className="mt-5 mb-3 w-4/5">
+        <div className="mt-5 mb-2 w-4/5">
           <div className="overflow-hidden">
             <ModalImage
               className="rounded w-full h-96 transition-all duration-500 ease-in-out object-cover hover:filter-none filter saturate-0 transform hover:scale-110 cursor-pointer"

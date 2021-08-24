@@ -93,7 +93,6 @@ function Navigation(props) {
             >
               Back to top
             </motion.div>
-            <SocialBar mainSectionInView={props.mainSectionInView} />
           </motion.div>
         )}
       </AnimatePresence>

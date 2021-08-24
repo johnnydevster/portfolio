@@ -47,6 +47,7 @@ function Projects(props) {
             ref={ref}
             className="relative md:-left-14 max-w-2xl mx-auto p-5 flex"
           >
+            <SocialBar mainSectionInView={mainSectionInView} />
             <div>
               <div className="flex items-center">
                 <div className="flex-shrink-0">
