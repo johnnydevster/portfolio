@@ -27,7 +27,7 @@ function ProjectCard(props) {
           </div>
         </div>
         <div
-          className={`rounded w-72 bg-blue-900 absolute transform -translate-y-1/2 top-1/2 ${
+          className={`rounded w-72 bg-blue-900 absolute transform -translate-y-1/2 top-1/2 shadow-lg ${
             isEven ? "left-0" : "right-0"
           } m-auto text-sm px-5 pb-3 pt-3`}
         >

@@ -1,6 +1,8 @@
 import me from "./static/Portrait2.PNG";
 
 function AboutMe(props) {
+  const frontEndSkills = ["HTML", "CSS", "React", "Sass", "Tailwind"];
+  const backEndSkills = ["Node.js", "MySQL", "Express.js", "Python"];
   return (
     <div>
       <div className="flex items-center">
@@ -10,7 +12,7 @@ function AboutMe(props) {
         <div className="w-full border-b-2 border-blue-400 border-opacity-20 ml-6 pt-1"></div>
       </div>
       <div className="flex flex-col sm:flex-row items-center justify-between my-10">
-        <div className="mx-auto relative max-w-md sm:h-36 flex flex-col justify-center text-blue-100 bg-blue-900 bg-opacity-50 rounded py-3 px-5">
+        <div className="mx-auto relative max-w-md sm:h-36 flex flex-col justify-center text-white bg-blue-900 bg-opacity-50 rounded py-3 px-5">
           <p className="text-sm">
             I'm a web developer based in Sundsvall, Sweden.
           </p>
@@ -34,8 +36,44 @@ function AboutMe(props) {
           <div className="absolute border-2 rounded border-blue-300 h-60 w-60 left-2 top-2 z-0 bg-blue-900 bg-opacity-60"></div>
         </div>
       </div>
-      <div className="mb-96 mt-5 sm:mt-12 p-5 text-base font-semibold text-yellow-300 bg-blue-900 bg-opacity-50">
-        <h1>I speak JavaScript, among many other things:</h1>
+      <h1 className="text-base text-white text-center">
+        I speak <span className="font-bold">JavaScript</span>, among many other
+        things:
+      </h1>
+      <div className="mb-96 mt-8 sm:mt-10 max-w-sm mx-auto p-5 text-base font-semibold bg-gray-900 bg-opacity-40 rounded">
+        <div id="skillscontainer" className="flex justify-around">
+          <div
+            id="frontendskills"
+            className="text-base w-1/2 flex flex-col items-center"
+          >
+            <h2 className="mb-4 text-yellow-300 text-lg">Front end</h2>
+            <ul className="text-white">
+              {frontEndSkills.map((skill, i) => {
+                return (
+                  <li key={i} className="mb-1 py-1 px-2 rounded bg-blue-600">
+                    {skill}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div className="border-l border-blue-600 border-opacity-40"></div>
+          <div
+            id="backendskills"
+            className="text-base w-1/2 ml-3 flex flex-col items-center"
+          >
+            <h2 className="mb-4 text-yellow-300 text-lg">Back end</h2>
+            <ul className="text-white">
+              {backEndSkills.map((skill, i) => {
+                return (
+                  <li key={i} className="mb-1 py-1 px-2 rounded bg-purple-600">
+                    {skill}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -35,7 +35,7 @@ function Projects(props) {
   }
 
   return (
-    <div className="projects text-blue-200 text-xl relative inset-0 pt-3 pb-6 flex-col">
+    <div className="projects text-blue-50 text-xl relative inset-0 pt-3 pb-6 flex-col">
       <InView
         threshold={0.15}
         onChange={(inView, entry) => {
