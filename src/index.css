@@ -28,4 +28,8 @@
     border-right: 9px solid transparent;
     border-top: 25px solid rgba(30, 58, 138);
   }
+
+  .graybgdiv {
+    z-index: -10;
+  }
 }

@@ -2,6 +2,7 @@ import ProjectCard from "./ProjectCard";
 import projects from "./projectsData";
 import Navigation from "./Navigation";
 import AboutMe from "./AboutMe";
+import Contact from "./Contact";
 import SocialBar from "./SocialBar";
 import { useEffect, useState, useRef } from "react";
 import { useInView, InView } from "react-intersection-observer";
@@ -72,11 +73,11 @@ function Projects(props) {
                   );
                 })}
               </section>
-              <div ref={aboutMeRef} className="">
+              <div ref={aboutMeRef}>
                 <AboutMe />
               </div>
               <div ref={contactRef} className="h-96 mb-96">
-                Contact section
+                <Contact />
               </div>
               <div ref={backToTopRef} className="h-96 mb-96">
                 Back to top

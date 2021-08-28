@@ -1,9 +1,10 @@
 import me from "./static/Portrait2.PNG";
 import { Screen, Database } from "./static/icons";
-
+//
 function AboutMe(props) {
   const frontEndSkills = ["HTML", "CSS", "React", "Sass", "Tailwind"];
   const backEndSkills = ["Node.js", "MySQL", "Express.js", "Python", "REST"];
+
   return (
     <div>
       <div className="flex items-center">
@@ -33,7 +34,7 @@ function AboutMe(props) {
             className="filter brightness-125 h-60 object-cover rounded relative z-30"
             src={me}
           />
-          <div className="rounded bg-blue-800 bg-opacity-30 absolute inset-0 transition-all duration-500 ease-in-out hover:bg-opacity-0 z-40"></div>
+          <div className="rounded bg-blue-800 bg-opacity-0 md:bg-opacity-30 absolute inset-0 transition-all duration-500 ease-in-out hover:bg-opacity-0 z-40"></div>
           <div className="absolute border-2 rounded border-blue-300 h-60 w-60 left-2 top-2 z-0 bg-blue-900 bg-opacity-60"></div>
         </div>
       </div>
@@ -41,13 +42,13 @@ function AboutMe(props) {
         I speak <span className="font-bold">JavaScript</span>, among many other
         things:
       </h1>
-      <div className="mb-96 mt-12 sm:mt-16 max-w-sm mx-auto p-5 text-base font-semibold bg-gray-900 bg-opacity-40 rounded">
+      <div className="mt-12 sm:mt-16 max-w-sm mx-auto p-5 text-base font-semibold bg-gray-900 bg-opacity-50 rounded border border-blue-600 border-opacity-70">
         <div id="skillscontainer" className="flex justify-around">
           <div
             id="frontendskills"
-            className="text-base w-1/2 flex flex-col items-center relative"
+            className="text-base w-1/2 mr-3 flex flex-col items-center relative"
           >
-            <div className="absolute -top-10 w-10">
+            <div className="absolute -top-11 w-10">
               <Screen className="fill-current text-yellow-300" />
             </div>
             <h2 className="mb-4 text-white text-lg">Front end</h2>
@@ -61,12 +62,12 @@ function AboutMe(props) {
               })}
             </ul>
           </div>
-          <div className="border-l border-blue-600 border-opacity-40"></div>
+          <div className="border-l border-blue-600 border-opacity-30"></div>
           <div
             id="backendskills"
             className="text-base w-1/2 ml-3 flex flex-col items-center relative"
           >
-            <div className="absolute -top-9 w-7">
+            <div className="absolute -top-10 w-7">
               <Database className="fill-current text-yellow-300" />
             </div>
             <h2 className="mb-4 text-white text-lg">Back end</h2>
