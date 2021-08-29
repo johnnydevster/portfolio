@@ -1,5 +1,40 @@
 import ContactForm from "./ContactForm";
 import { LinkedIn, GitHub } from "./static/icons";
+import { motion, AnimatePresence } from "framer-motion";
+
+const list = {
+  visible: {
+    opacity: 1,
+    transition: { ease: "easeInOut", duration: 0.6 },
+  },
+  hidden: {
+    opacity: 1,
+    height: 0,
+    transition: { ease: "easeInOut", duration: 0.6 },
+  },
+};
+
+const initial = {
+  opacity: 0,
+  x: "200%",
+  height: 0,
+  transition: { ease: "easeOut", duration: 0.4 },
+};
+
+const animate = {
+  opacity: 1,
+  x: 0,
+  transition: { ease: "easeOut", duration: 0.4 },
+};
+
+//${
+//  !props.mainSectionInView ? "hidden " : "visible "
+//}
+
+const item = {
+  visible: { opacity: 1, x: 0 },
+  hidden: { opacity: 0, x: -100 },
+};
 
 function Contact() {
   return (
