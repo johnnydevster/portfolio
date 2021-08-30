@@ -32,4 +32,8 @@
   .graybgdiv {
     z-index: -10;
   }
+
+  .xbutton {
+    z-index: 100;
+  }
 }

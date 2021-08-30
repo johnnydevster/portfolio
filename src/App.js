@@ -1,11 +1,14 @@
 import "./index.css";
-import { ArrowDown, GitHub, LinkedIn } from "./static/icons";
+import { ArrowDown, GitHub, LinkedIn, Xbutton } from "./static/icons";
+import ContactForm from "./ContactForm";
 import Projects from "./Projects";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Transition } from "react-transition-group";
 
 function App() {
   const projectsRef = useRef();
   const topRef = useRef();
+  const [showContactForm, setShowContactForm] = useState(false);
 
   function scrollToTop() {
     if (topRef.current) {
@@ -17,6 +20,67 @@ function App() {
     if (projectsRef.current) {
       projectsRef.current.scrollIntoView({ behavior: "smooth" });
     }
+  }
+
+  function useOutsideAlerter(ref) {
+    useEffect(() => {
+      /**
+       * Alert if clicked on outside of element
+       */
+      function handleClickOutside(event) {
+        if (
+          ref.current &&
+          !ref.current.contains(event.target) &&
+          showContactForm
+        ) {
+          setShowContactForm(false);
+        }
+      }
+
+      // Bind the event listener
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+
+  function ContactFormPopup(props) {
+    const wrapperRef = useRef(null);
+    useOutsideAlerter(wrapperRef);
+
+    const duration = 200;
+
+    const defaultStyle = {
+      transition: `all ${duration}ms ease-in-out`,
+      opacity: 1,
+      left: 10 + "%",
+    };
+
+    const transitionStyles = {
+      entering: { opacity: 0 },
+      entered: { opacity: 1, left: 0 },
+      exiting: { opacity: 1, left: 0 },
+      exited: { opacity: 0, left: 10 + "%" },
+    };
+
+    return (
+      <div
+        ref={wrapperRef}
+        id="contactformcontainer"
+        style={{ ...defaultStyle, ...transitionStyles[props.state] }}
+        className="absolute transform z-40 top-1/2 -translate-y-1/2 right-0 md:w-3/5 lg:w-2/3 xl:w-1/2 mx-auto"
+      >
+        <div
+          onClick={() => setShowContactForm(false)}
+          className="xbutton absolute w-8 h-8 rounded-full bg-blue-500 cursor-pointer -right-4 -top-4 text-indigo-900 leading-7 text-center"
+        >
+          <Xbutton />
+        </div>
+        <ContactForm />
+      </div>
+    );
   }
   return (
     <div>
@@ -41,6 +105,10 @@ function App() {
             </a>
           </div>
         </header>
+        <Transition in={showContactForm} timeout={0}>
+          {(state) => <ContactFormPopup state={state} />}
+        </Transition>
+
         <div className="h-full md:h-full md:flex items-center">
           <div className="h-1/2 md:h-full relative md:w-2/5  pt-12 bg-blue-900 bg-opacity-80 flex items-center">
             <div className="text-white w-22 mx-auto p-4 flex flex-col">
@@ -51,7 +119,11 @@ function App() {
                   front end web developer.
                 </span>
               </h1>
-              <button className="transition-all ease-in-out duration-400 hover:bg-indigo-500 py-3 px-4 text-sm my-6 rounded-3xl bg-indigo-700 font-semibold self-center">
+
+              <button
+                onClick={() => setShowContactForm(true)}
+                className="transition-all ease-in-out duration-400 hover:bg-indigo-500 py-3 px-4 text-sm my-6 rounded-3xl bg-indigo-700 font-semibold self-center"
+              >
                 Contact me
               </button>
             </div>
