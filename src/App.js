@@ -4,11 +4,13 @@ import ContactForm from "./ContactForm";
 import Projects from "./Projects";
 import { useEffect, useRef, useState } from "react";
 import { Transition } from "react-transition-group";
+import SwedenAnimation from "./SwedenAnimation";
 
 function App() {
   const projectsRef = useRef();
   const topRef = useRef();
   const [showContactForm, setShowContactForm] = useState(false);
+  const [fireAnimation, setFireAnimation] = useState(false);
 
   function scrollToTop() {
     if (topRef.current) {
@@ -62,7 +64,7 @@ function App() {
       entering: { opacity: 0 },
       entered: { opacity: 1, left: 0 },
       exiting: { opacity: 1, left: 0 },
-      exited: { opacity: 0, left: 10 + "%" },
+      exited: { opacity: 0, left: 10 + "%", width: 0 },
     };
 
     return (
@@ -74,7 +76,7 @@ function App() {
       >
         <div
           onClick={() => setShowContactForm(false)}
-          className="xbutton absolute w-8 h-8 rounded-full bg-blue-500 cursor-pointer -right-4 -top-4 text-indigo-900 leading-7 text-center"
+          className="transition-all hover:bg-blue-400 xbutton absolute w-8 h-8 rounded-full bg-blue-500 cursor-pointer right-0 md:-right-4 -top-4 text-indigo-900 leading-7 text-center"
         >
           <Xbutton />
         </div>
@@ -82,10 +84,11 @@ function App() {
       </div>
     );
   }
+
   return (
     <div>
       <div ref={topRef} className="main h-screen w-full absolute z-0">
-        <header className="w-full h-12 z-20 absolute flex items-center justify-between">
+        <header className="w-full h-12 z-20 absolute flex items-center justify-end">
           <div className="flex fill-current text-yellow-300">
             <a
               href="https://github.com/johnnydevster"
@@ -103,6 +106,14 @@ function App() {
             >
               <LinkedIn />
             </a>
+            <button
+              onClick={() => setFireAnimation(!fireAnimation)}
+              className="px-2 bg-blue-500 mx-10"
+            >
+              Fire animation
+            </button>
+            <p>Fire animation is: </p>
+            <p>{String(fireAnimation)}</p>
           </div>
         </header>
         <Transition in={showContactForm} timeout={0}>
@@ -128,8 +139,9 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="h-1/2 md:h-full md:w-3/5 text-white pt-12 flex items-center">
-            <div className="mx-auto">
+          <div className="relative h-1/2 md:h-full md:w-3/5 text-white pt-12 flex items-center">
+            <SwedenAnimation fireAnimation={fireAnimation} />
+            <div className="mx-auto hidden">
               <p>I'm a developer currently based in Sundsvall, Sweden.</p>
             </div>
           </div>

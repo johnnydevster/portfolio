@@ -36,4 +36,88 @@
   .xbutton {
     z-index: 100;
   }
+
+  .norrland {
+    z-index: 100;
+    top: 131px;
+    right: 18px;
+    transform: scale(0.385);
+  }
+
+  .sweden-appear {
+    opacity: 0;
+  }
+
+  .sweden-enter-active {
+    animation: explode 500ms ease-in-out;
+  }
+
+  .sweden-enter-done {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+
+  .sweden-exit-active {
+    animation: deflate 500ms ease-in-out;
+  }
+
+  .sweden-exit-done {
+    opacity: 0;
+  }
+
+  .animatein {
+    animation: explode 3s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  .animateout1 {
+    animation: deflate 500ms ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes explode {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+      transform: scale(1.5);
+    }
+    30% {
+      color: #1d4ed8;
+    }
+    33% {
+      color: #60a5fa;
+    }
+    36% {
+      color: #1d4ed8;
+    }
+    39% {
+      color: #60a5fa;
+    }
+    42% {
+      color: #1d4ed8;
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    80% {
+      transform: scale(7);
+      transform: scale(7) translate(5%, -2%);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(7) translate(5%, -2%);
+    }
+  }
+
+  @keyframes deflate {
+    0% {
+      transform: scale(1.5);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
 }

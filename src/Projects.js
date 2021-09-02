@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 import AboutMe from "./AboutMe";
 import Contact from "./Contact";
 import SocialBar from "./SocialBar";
-import { useEffect, useState, useRef } from "react";
+import { useState } from "react";
 import { useInView, InView } from "react-intersection-observer";
 
 function Projects(props) {

@@ -1,6 +1,4 @@
 import { motion, AnimatePresence } from "framer-motion";
-import SocialBar from "./SocialBar";
-import { useEffect, useState } from "react";
 
 function Navigation(props) {
   const list = {
