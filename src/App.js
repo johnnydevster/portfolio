@@ -10,7 +10,8 @@ function App() {
   const projectsRef = useRef();
   const topRef = useRef();
   const [showContactForm, setShowContactForm] = useState(false);
-  const [fireAnimation, setFireAnimation] = useState(false);
+  const [fireAnimation, setFireAnimation] = useState(true);
+  const [showIntroOverlay, setShowIntroOverlay] = useState(false);
 
   function scrollToTop() {
     if (topRef.current) {
@@ -121,9 +122,8 @@ function App() {
         </Transition>
 
         <div className="h-full md:h-full md:flex items-center">
-          <div className="h-1/2 md:h-full relative md:w-2/5  pt-12 bg-blue-900 bg-opacity-80 flex items-center">
+          <div className="introframe bg-opacity-50 h-1/3 md:h-full relative md:w-2/5  pt-12 flex items-center">
             <div className="text-white w-22 mx-auto p-4 flex flex-col">
-              <h2 className="mb-1 text-blue-50">hi there, i'm</h2>
               <h1 className="mb-2 text-4xl sm:text-6xl">Johnny Backlund</h1>
               <h1 className="text-3xl sm:text-4xl xl:text-right">
                 <span className="text-yellow-300">
@@ -139,9 +139,16 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="relative h-1/2 md:h-full md:w-3/5 text-white pt-12 flex items-center">
-            <SwedenAnimation fireAnimation={fireAnimation} />
-            <div className="hidden introoverlay mx-auto text-gray-200 bg-gray-900 p-2 bg-opacity-90 rounded">
+          <div className="relative h-2/3 md:h-full md:w-3/5 text-white pt-12 flex items-center">
+            <SwedenAnimation
+              fireAnimation={fireAnimation}
+              setShowIntroOverlay={setShowIntroOverlay}
+            />
+            <div
+              className={`${
+                showIntroOverlay ? "opacity-100" : "opacity-0"
+              } transition-all ease-in-out duration-500 relative bottom-10 introoverlay mx-auto text-gray-200 bg-gray-900 p-2 bg-opacity-80 rounded`}
+            >
               <p>
                 I'm a developer currently based in{" "}
                 <span className="text-white font-semibold">
