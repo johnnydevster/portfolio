@@ -114,7 +114,7 @@ function ContactForm() {
 
   return (
     <form
-      className="flex flex-col text-base bg-blue-900 pt-5 px-5 pb-3 rounded relative z-50 text-white"
+      className="flex flex-col text-base bg-blue-900 pt-5 px-5 pb-3 rounded relative text-white"
       onSubmit={(e) => sendEmail(e)}
     >
       <Transition in={messageSuccess} timeout={300}>

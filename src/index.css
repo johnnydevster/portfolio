@@ -29,6 +29,10 @@
     border-top: 25px solid rgba(30, 58, 138);
   }
 
+  #contactformcontainer {
+    z-index: 200;
+  }
+
   .graybgdiv {
     z-index: -10;
   }
@@ -44,29 +48,37 @@
     transform: scale(0.385);
   }
 
-  .sweden-appear {
-    opacity: 0;
+  .radarcontainer {
+    color: #bfdbfe;
+    z-index: 110;
+    top: 235px;
+    left: 87px;
+    animation: rotate 15s linear forwards, cycleopacity 1s ease-in-out alternate;
+    animation-iteration-count: infinite;
   }
 
-  .sweden-enter-active {
-    animation: explode 500ms ease-in-out;
+  .radar {
+    color: #bfdbfe;
+    z-index: 120;
+    transform: scale(0.6);
   }
 
-  .sweden-enter-done {
-    opacity: 1;
-    transform: scale(1.5);
-  }
-
-  .sweden-exit-active {
-    animation: deflate 500ms ease-in-out;
-  }
-
-  .sweden-exit-done {
-    opacity: 0;
+  .introoverlay {
+    z-index: 150;
   }
 
   .animatein {
-    animation: explode 3s ease-in-out;
+    animation: scaleup 3s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  .animatein.norrland {
+    animation: opacityup 3s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  .animatein.sweden {
+    animation: swedenfade 3s ease-in-out;
     animation-fill-mode: forwards;
   }
 
@@ -75,7 +87,7 @@
     animation-fill-mode: forwards;
   }
 
-  @keyframes explode {
+  @keyframes scaleup {
     0% {
       opacity: 0;
     }
@@ -83,31 +95,74 @@
       opacity: 1;
       transform: scale(1.5);
     }
-    30% {
-      color: #1d4ed8;
-    }
-    33% {
-      color: #60a5fa;
-    }
-    36% {
-      color: #1d4ed8;
-    }
-    39% {
-      color: #60a5fa;
-    }
     42% {
-      color: #1d4ed8;
     }
     50% {
       transform: scale(1.5);
     }
     80% {
       transform: scale(7);
-      transform: scale(7) translate(5%, -2%);
+      transform: scale(7) translate(5%, -4%);
+    }
+    100% {
+      transform: scale(7) translate(5%, -4%);
+    }
+  }
+
+  @keyframes cycleopacity {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes opacityup {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    30% {
+      color: #1d4ed8;
+    }
+    33% {
+      color: #3b82f6;
+    }
+    36% {
+      color: #2563eb;
+    }
+    39% {
+      color: #3b82f6;
+    }
+    42% {
+      color: #2563eb;
     }
     100% {
       opacity: 1;
-      transform: scale(7) translate(5%, -2%);
+      color: #2563eb;
+    }
+  }
+
+  @keyframes swedenfade {
+    0% {
+      opacity: 1;
+    }
+    42% {
+      opacity: 1;
+      color: #1d4ed8;
+    }
+    100% {
+      opacity: 0.6;
+      color: #1e3a8a;
     }
   }
 

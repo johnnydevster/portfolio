@@ -1,4 +1,4 @@
-import { Sweden, Västernorrland } from "./static/icons";
+import { Sweden, Västernorrland, RadarIcon } from "./static/icons";
 import { CSSTransition } from "react-transition-group";
 
 /*
@@ -68,12 +68,21 @@ function SwedenAnimation(props) {
         <div
           className={`relative ${
             props.fireAnimation ? "animatein" : "animateout"
-          }`}
+          } `}
         >
           <Sweden
-            className={`transform transition-all ease-in-out duration-500 fill-current text-blue-700`}
+            className={`${
+              props.fireAnimation ? "animatein" : "animateout"
+            } sweden transform transition-all ease-in-out duration-500 fill-current text-blue-700`}
           />
-          <Västernorrland className="norrland fill-current text-blue-500 absolute z-50" />
+          <Västernorrland
+            className={`${
+              props.fireAnimation ? "animatein" : "animateout"
+            } norrland fill-current text-blue-700 absolute z-50`}
+          />
+          <div className="radarcontainer bg-blue-500 w-2 h-2 rounded-full bg-opacity-60 absolute">
+            <RadarIcon className="radar absolute fill-current w-2" />
+          </div>
         </div>
       </div>
     </div>

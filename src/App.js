@@ -141,8 +141,14 @@ function App() {
           </div>
           <div className="relative h-1/2 md:h-full md:w-3/5 text-white pt-12 flex items-center">
             <SwedenAnimation fireAnimation={fireAnimation} />
-            <div className="mx-auto hidden">
-              <p>I'm a developer currently based in Sundsvall, Sweden.</p>
+            <div className="hidden introoverlay mx-auto text-gray-200 bg-gray-900 p-2 bg-opacity-90 rounded">
+              <p>
+                I'm a developer currently based in{" "}
+                <span className="text-white font-semibold">
+                  Sundsvall, Sweden
+                </span>
+                .
+              </p>
             </div>
           </div>
           <div
