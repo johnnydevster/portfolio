@@ -38,12 +38,12 @@ function SwedenAnimation(props) {
           <Sweden
             className={`${
               props.fireAnimation ? "animatein" : ""
-            } sweden transform transition-all ease-in-out duration-500 fill-current text-blue-700`}
+            } opacity-0 sweden transform transition-all ease-in-out duration-500 fill-current text-blue-700`}
           />
           <Västernorrland
             className={`${
               props.fireAnimation ? "animatein" : ""
-            } norrland fill-current text-blue-700 absolute z-50`}
+            } opacity-0 norrland fill-current text-blue-700 absolute z-50`}
           />
           <div
             className={`${

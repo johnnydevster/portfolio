@@ -22,7 +22,11 @@
     }
   }
 
-  header,
+  header {
+    z-index: 250;
+    background-color: #06113c;
+  }
+
   .projects {
     background-color: #07154e;
   }

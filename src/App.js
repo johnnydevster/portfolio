@@ -89,34 +89,6 @@ function App() {
   return (
     <div>
       <div ref={topRef} className="main h-screen w-full absolute z-0">
-        <header className="w-full h-12 z-20 absolute flex items-center justify-end">
-          <div className="flex fill-current text-yellow-300">
-            <a
-              href="https://github.com/johnnydevster"
-              target="_blank"
-              rel="noreferrer"
-              className="w-6 ml-12 fill-current cursor-pointer hover:text-yellow-200 text-yellow-300"
-            >
-              <GitHub />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/johnny-backlund-3b8221179/"
-              target="_blank"
-              rel="noreferrer"
-              className="w-6 ml-5 fill-current text-yellow-300 cursor-pointer hover:text-yellow-200"
-            >
-              <LinkedIn />
-            </a>
-            <button
-              onClick={() => setFireAnimation(!fireAnimation)}
-              className="px-2 bg-blue-500 mx-10"
-            >
-              Fire animation
-            </button>
-            <p>Fire animation is: </p>
-            <p>{String(fireAnimation)}</p>
-          </div>
-        </header>
         <Transition in={showContactForm} timeout={0}>
           {(state) => <ContactFormPopup state={state} />}
         </Transition>
@@ -167,7 +139,11 @@ function App() {
           </div>
         </div>
         <div ref={projectsRef}>
-          <Main scrollToTop={scrollToTop} />
+          <Main
+            fireAnimation={fireAnimation}
+            setFireAnimation={setFireAnimation}
+            scrollToTop={scrollToTop}
+          />
         </div>
       </div>
     </div>

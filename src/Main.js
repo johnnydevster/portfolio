@@ -4,6 +4,7 @@ import Navigation from "./Navigation";
 import AboutMe from "./AboutMe";
 import Contact from "./Contact";
 import SocialBar from "./SocialBar";
+import { GitHub, LinkedIn } from "./static/icons";
 import { useState } from "react";
 import { useInView, InView } from "react-intersection-observer";
 
@@ -37,6 +38,30 @@ function Main(props) {
 
   return (
     <div className="projects text-blue-50 text-xl relative inset-0 pt-3 pb-6 flex-col">
+      <header
+        className={`transform transition-all duration-400 ease-in-out w-full top-0 ${
+          mainSectionInView ? "md:-translate-y-12" : ""
+        } h-12 fixed flex items-center`}
+      >
+        <div className="flex fill-current text-yellow-300">
+          <a
+            href="https://github.com/johnnydevster"
+            target="_blank"
+            rel="noreferrer"
+            className="w-6 ml-12 fill-current cursor-pointer hover:text-yellow-200 text-yellow-300"
+          >
+            <GitHub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/johnny-backlund-3b8221179/"
+            target="_blank"
+            rel="noreferrer"
+            className="w-6 ml-5 fill-current text-yellow-300 cursor-pointer hover:text-yellow-200"
+          >
+            <LinkedIn />
+          </a>
+        </div>
+      </header>
       <InView
         threshold={0.15}
         onChange={(inView, entry) => {
