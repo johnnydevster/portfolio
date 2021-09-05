@@ -7,7 +7,7 @@ import SocialBar from "./SocialBar";
 import { useState } from "react";
 import { useInView, InView } from "react-intersection-observer";
 
-function Projects(props) {
+function Main(props) {
   const [mainSectionInView, setMainSectionInView] = useState(false);
 
   const [projectsRef, projectsInView, projectsEntry] = useInView({
@@ -101,4 +101,4 @@ function Projects(props) {
   );
 }
 
-export default Projects;
+export default Main;

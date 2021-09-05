@@ -1,7 +1,7 @@
 import "./index.css";
 import { ArrowDown, GitHub, LinkedIn, Xbutton } from "./static/icons";
 import ContactForm from "./ContactForm";
-import Projects from "./Projects";
+import Main from "./Main";
 import { useEffect, useRef, useState } from "react";
 import { Transition } from "react-transition-group";
 import SwedenAnimation from "./SwedenAnimation";
@@ -167,7 +167,7 @@ function App() {
           </div>
         </div>
         <div ref={projectsRef}>
-          <Projects scrollToTop={scrollToTop} />
+          <Main scrollToTop={scrollToTop} />
         </div>
       </div>
     </div>
