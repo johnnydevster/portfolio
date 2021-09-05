@@ -43,23 +43,47 @@ function Main(props) {
           mainSectionInView ? "md:-translate-y-12" : ""
         } h-12 fixed flex items-center`}
       >
-        <div className="flex fill-current text-yellow-300">
-          <a
-            href="https://github.com/johnnydevster"
-            target="_blank"
-            rel="noreferrer"
-            className="w-6 ml-12 fill-current cursor-pointer hover:text-yellow-200 text-yellow-300"
-          >
-            <GitHub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/johnny-backlund-3b8221179/"
-            target="_blank"
-            rel="noreferrer"
-            className="w-6 ml-5 fill-current text-yellow-300 cursor-pointer hover:text-yellow-200"
-          >
-            <LinkedIn />
-          </a>
+        <div className="flex w-full justify-between fill-current text-yellow-300">
+          <div className="flex items-center mx-14">
+            <a
+              href="https://github.com/johnnydevster"
+              target="_blank"
+              rel="noreferrer"
+              className="w-6 fill-current cursor-pointer hover:text-yellow-200 text-yellow-300"
+            >
+              <GitHub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/johnny-backlund-3b8221179/"
+              target="_blank"
+              rel="noreferrer"
+              className="w-6 ml-5 fill-current text-yellow-300 cursor-pointer hover:text-yellow-200"
+            >
+              <LinkedIn />
+            </a>
+          </div>
+          <nav>
+            <ul className="flex text-base text-blue-100 font-semibold justify-between w-72 mx-14">
+              <li
+                onClick={scrollToProjects}
+                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 px-2 py-1 rounded"
+              >
+                Projects
+              </li>
+              <li
+                onClick={scrollToAboutMe}
+                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 px-2 py-1 rounded"
+              >
+                About Me
+              </li>
+              <li
+                onClick={scrollToContact}
+                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 px-2 py-1 rounded"
+              >
+                Contact
+              </li>
+            </ul>
+          </nav>
         </div>
       </header>
       <InView
