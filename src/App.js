@@ -58,14 +58,13 @@ function App() {
     const defaultStyle = {
       transition: `all ${duration}ms ease-in-out`,
       opacity: 1,
-      left: 10 + "%",
     };
 
     const transitionStyles = {
       entering: { opacity: 0 },
       entered: { opacity: 1, left: 0 },
       exiting: { opacity: 1, left: 0 },
-      exited: { opacity: 0, left: 10 + "%", width: 0 },
+      exited: { opacity: 0, left: 0, width: 0, height: 0 },
     };
 
     return (
@@ -88,11 +87,10 @@ function App() {
 
   return (
     <div>
-      <div ref={topRef} className="main h-screen w-full absolute z-0">
+      <div ref={topRef} className="main h-screen w-full z-0">
         <Transition in={showContactForm} timeout={0}>
           {(state) => <ContactFormPopup state={state} />}
         </Transition>
-
         <div className="h-full md:h-full md:flex items-center">
           <div className="introframe bg-opacity-50 h-1/3 md:h-full relative md:w-2/5  pt-12 flex items-center">
             <div className="text-white w-22 mx-auto p-4 flex flex-col">
@@ -138,6 +136,7 @@ function App() {
             <ArrowDown className="transition-all duration-400 ease-in-out bg-blue-700 bg-opacity-20 hover:bg-opacity-60 rounded-full p-2 fill-current text-yellow-400 cursor-pointer animate-bounce" />
           </div>
         </div>
+
         <div ref={projectsRef}>
           <Main
             fireAnimation={fireAnimation}

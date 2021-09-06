@@ -44,7 +44,7 @@ function Main(props) {
         } h-12 fixed flex items-center`}
       >
         <div className="flex w-full justify-between fill-current text-yellow-300">
-          <div className="flex items-center mx-14">
+          <div className="flex items-center">
             <a
               href="https://github.com/johnnydevster"
               target="_blank"
@@ -63,22 +63,22 @@ function Main(props) {
             </a>
           </div>
           <nav>
-            <ul className="flex text-base text-blue-100 font-semibold justify-between w-72 mx-14">
+            <ul className="flex text-base text-white font-semibold justify-between">
               <li
                 onClick={scrollToProjects}
-                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 px-2 py-1 rounded"
+                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 py-1 rounded"
               >
                 Projects
               </li>
               <li
                 onClick={scrollToAboutMe}
-                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 px-2 py-1 rounded"
+                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 py-1 rounded"
               >
                 About Me
               </li>
               <li
                 onClick={scrollToContact}
-                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 px-2 py-1 rounded"
+                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 py-1 rounded"
               >
                 Contact
               </li>

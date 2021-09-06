@@ -19,7 +19,6 @@ function SwedenAnimation(props) {
 
   useEffect(() => {
     if (displayRadarButton) {
-      console.log("Show intro overlay.");
       let timer = () => setTimeout(props.setShowIntroOverlay, 500, true);
       let timerId = timer();
       return () => {
