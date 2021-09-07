@@ -11,6 +11,7 @@
 
   .introframe {
     background-color: #091858;
+    z-index: 500;
   }
 
   @keyframes movebackground {
@@ -125,10 +126,10 @@
     }
     80% {
       transform: scale(7);
-      transform: scale(7) translate(3%, -4%);
+      transform: scale(7) translate(3%, -5%);
     }
     100% {
-      transform: scale(7) translate(3%, -4%);
+      transform: scale(7) translate(3%, -5%);
     }
   }
 
@@ -190,6 +191,14 @@
     100% {
       opacity: 0;
       transform: scale(1);
+    }
+  }
+}
+
+.h-screen {
+  @supports (-webkit-appearance: none) {
+    .os-android & {
+      min-height: calc(100vh - 56px);
     }
   }
 }

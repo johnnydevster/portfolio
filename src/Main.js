@@ -44,7 +44,7 @@ function Main(props) {
         } h-12 fixed flex items-center`}
       >
         <div className="flex w-full justify-between fill-current text-yellow-300">
-          <div className="flex items-center">
+          <div className="ml-5 flex items-center">
             <a
               href="https://github.com/johnnydevster"
               target="_blank"
@@ -63,26 +63,28 @@ function Main(props) {
             </a>
           </div>
           <nav>
-            <ul className="flex text-base text-white font-semibold justify-between">
+            {/*Medium size or larger navbar */}
+            <ul className="text-lg w-80 transition-all transform translate-x-full md:-translate-x-48 flex text-base text-white font-semibold justify-between">
               <li
                 onClick={scrollToProjects}
-                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 py-1 rounded"
+                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 py-1 px-2 rounded"
               >
                 Projects
               </li>
               <li
                 onClick={scrollToAboutMe}
-                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 py-1 rounded"
+                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 py-1 px-2 rounded"
               >
                 About Me
               </li>
               <li
                 onClick={scrollToContact}
-                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 py-1 rounded"
+                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 py-1 px-2 rounded"
               >
                 Contact
               </li>
             </ul>
+            {/*Mobile friendly navbar */}
           </nav>
         </div>
       </header>

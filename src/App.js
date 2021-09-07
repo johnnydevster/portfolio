@@ -92,7 +92,7 @@ function App() {
           {(state) => <ContactFormPopup state={state} />}
         </Transition>
         <div className="h-full md:h-full md:flex items-center">
-          <div className="introframe bg-opacity-50 h-1/3 md:h-full relative md:w-2/5  pt-12 flex items-center">
+          <div className="introframe bg-opacity-50 h-1/3 md:h-full relative md:w-2/5 mt-12 flex items-center">
             <div className="text-white w-22 mx-auto p-4 flex flex-col">
               <h1 className="mb-2 text-4xl sm:text-6xl">Johnny Backlund</h1>
               <h1 className="text-3xl sm:text-4xl xl:text-right">
@@ -109,7 +109,7 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="relative h-2/3 md:h-full md:w-3/5 text-white pt-12 flex items-center">
+          <div className="-mt-12 z-0 relative h-2/3 md:h-full md:w-3/5 text-white pt-12 flex items-center">
             <SwedenAnimation
               fireAnimation={fireAnimation}
               setShowIntroOverlay={setShowIntroOverlay}
@@ -117,7 +117,7 @@ function App() {
             <div
               className={`${
                 showIntroOverlay ? "opacity-100" : "opacity-0"
-              } transition-all ease-in-out duration-500 relative bottom-10 introoverlay mx-auto text-gray-200 bg-gray-900 p-2 bg-opacity-80 rounded`}
+              } transition-all ease-in-out duration-500 relative bottom-20 introoverlay mx-auto text-gray-200 bg-gray-900 p-2 bg-opacity-80 rounded transform scale-75 sm:scale-100`}
             >
               <p>
                 I'm a developer currently based in{" "}
@@ -132,8 +132,10 @@ function App() {
             onClick={scrollToProjects}
             className="absolute text-yellow-500 bottom-6 left-0 right-0 mx-auto w-20"
           >
-            <h1 className="text-yellow-300 relative -top-6">Projects</h1>
-            <ArrowDown className="transition-all duration-400 ease-in-out bg-blue-700 bg-opacity-20 hover:bg-opacity-60 rounded-full p-2 fill-current text-yellow-400 cursor-pointer animate-bounce" />
+            <h1 className="text-yellow-300 text-center relative -top-6">
+              Projects
+            </h1>
+            <ArrowDown className="transition-all mx-auto duration-400 ease-in-out bg-blue-700 bg-opacity-20 hover:bg-opacity-60 rounded-full p-2 fill-current text-yellow-400 cursor-pointer animate-bounce" />
           </div>
         </div>
 
