@@ -5,7 +5,8 @@ import AboutMe from "./AboutMe";
 import Contact from "./Contact";
 import SocialBar from "./SocialBar";
 import { GitHub, LinkedIn } from "./static/icons";
-import { useState } from "react";
+import { Hamburger } from "./static/icons";
+import { useState, useRef, useEffect } from "react";
 import { useInView, InView } from "react-intersection-observer";
 
 function Main(props) {
@@ -23,6 +24,40 @@ function Main(props) {
   const [backToTopRef, backToTopInView, backToTopEntry] = useInView({
     threshold: 0.5,
   });
+  const [showSideBar, setShowSideBar] = useState(true);
+
+  function useOutsideAlerter(ref) {
+    useEffect(() => {
+      /**
+       * Alert if clicked on outside of element
+       */
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target) && showSideBar) {
+          setShowSideBar(false);
+          console.log("Clicked outside sidebar.");
+        }
+      }
+
+      function handleDragOutside(event) {
+        if (ref.current && !ref.current.contains(event.target) && showSideBar) {
+          setShowSideBar(false);
+          console.log("Dragged outside sidebar.");
+        }
+      }
+
+      // Bind the event listener
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("drag", handleDragOutside);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutside);
+        document.addEventListener("drag", handleDragOutside);
+      };
+    }, [ref]);
+  }
+
+  const sidebarRef = useRef(null);
+  useOutsideAlerter(sidebarRef);
 
   function scrollToProjects() {
     projectsEntry.target.scrollIntoView({ behavior: "smooth" });
@@ -37,7 +72,7 @@ function Main(props) {
   }
 
   return (
-    <div className="projects text-blue-50 text-xl relative inset-0 pt-3 pb-6 flex-col">
+    <div className="-mt-12 md:mt-0 projects text-blue-50 text-xl relative inset-0 pt-3 pb-6 flex-col">
       <header
         className={`transform transition-all duration-400 ease-in-out w-full top-0 ${
           mainSectionInView ? "md:-translate-y-12" : ""
@@ -62,29 +97,74 @@ function Main(props) {
               <LinkedIn />
             </a>
           </div>
+
           <nav>
             {/*Medium size or larger navbar */}
-            <ul className="text-lg w-80 transition-all transform translate-x-full md:-translate-x-48 flex text-base text-white font-semibold justify-between">
+            <ul className="text-lg w-80 mr-20 flex flex-nowrap hidden md:flex transition-all transform text-base text-white font-semibold justify-between">
               <li
                 onClick={scrollToProjects}
-                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 py-1 px-2 rounded"
+                className="duration-100 ease-in-out cursor-pointer hover:bg-blue-900 hover:bg-opacity-50 py-1 px-2 rounded"
               >
                 Projects
               </li>
               <li
                 onClick={scrollToAboutMe}
-                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 py-1 px-2 rounded"
+                className="duration-100 ease-in-out cursor-pointer hover:bg-blue-900 hover:bg-opacity-50 py-1 px-2 rounded"
               >
                 About Me
               </li>
               <li
                 onClick={scrollToContact}
-                className="transition-all duration-100 ease-in-out cursor-pointer hover:bg-blue-900 py-1 px-2 rounded"
+                className="duration-100 ease-in-out cursor-pointer hover:bg-blue-900 hover:bg-opacity-50 py-1 px-2 rounded"
               >
                 Contact
               </li>
             </ul>
             {/*Mobile friendly navbar */}
+            <div ref={sidebarRef}>
+              <button
+                onClick={() => setShowSideBar(!showSideBar)}
+                className="hamburger md:hidden w-10 h-10 p-1 absolute right-5 top-1/2 transform -translate-y-1/2 hover:bg-blue-900 hover:bg-opacity-50 cursor-pointer rounded"
+              >
+                <Hamburger />
+              </button>
+              <ul
+                className={`transition-all duration-300 ease-in-out transform ${
+                  showSideBar ? "translate-x-0" : "translate-x-full"
+                } sidebar fixed h-screen w-1/2 top-0 right-0 bg-gray-900 flex flex-col justify-center text-2xl`}
+              >
+                <li
+                  onClick={scrollToProjects}
+                  className={`${
+                    projectsInView ? "bg-gray-800" : ""
+                  } px-4 mb-3 duration-100 ease-in-out cursor-pointerhover:bg-blue-900 py-1 px-2 rounded`}
+                >
+                  Projects
+                </li>
+                <li
+                  onClick={scrollToAboutMe}
+                  className={`${
+                    aboutMeInView && !projectsInView ? "bg-gray-800" : ""
+                  } px-4 mb-3 duration-100 ease-in-out cursor-pointerhover:bg-blue-900 py-1 px-2 rounded`}
+                >
+                  About Me
+                </li>
+                <li
+                  onClick={scrollToContact}
+                  className={`${
+                    contactInView && !aboutMeInView ? "bg-gray-800" : ""
+                  } px-4 mb-3 duration-100 ease-in-out cursor-pointerhover:bg-blue-900 py-1 px-2 rounded`}
+                >
+                  Contact
+                </li>
+                <li
+                  onClick={props.scrollToTop}
+                  className={`px-4 duration-100 ease-in-out cursor-pointerhover:bg-blue-900 py-1 px-2 rounded`}
+                >
+                  Back to top
+                </li>
+              </ul>
+            </div>
           </nav>
         </div>
       </header>

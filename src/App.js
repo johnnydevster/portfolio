@@ -92,10 +92,10 @@ function App() {
           {(state) => <ContactFormPopup state={state} />}
         </Transition>
         <div className="h-full md:h-full md:flex items-center">
-          <div className="introframe bg-opacity-50 h-1/3 md:h-full relative md:w-2/5 mt-12 flex items-center">
+          <div className="mt-12 introframe bg-opacity-50 h-1/4 md:h-full relative md:w-2/5 flex items-center">
             <div className="text-white w-22 mx-auto p-4 flex flex-col">
-              <h1 className="mb-2 text-4xl sm:text-6xl">Johnny Backlund</h1>
-              <h1 className="text-3xl sm:text-4xl xl:text-right">
+              <h1 className="text-3xl sm:text-6xl">Johnny Backlund</h1>
+              <h1 className="text-2xl sm:text-4xl xl:text-right">
                 <span className="text-yellow-300">
                   front end web developer.
                 </span>
@@ -103,13 +103,13 @@ function App() {
 
               <button
                 onClick={() => setShowContactForm(true)}
-                className="transition-all ease-in-out duration-400 hover:bg-indigo-500 py-3 px-4 text-sm my-6 rounded-3xl bg-indigo-700 font-semibold self-center"
+                className="transition-all ease-in-out duration-400 hover:bg-indigo-500 py-3 px-4 text-sm my-3 rounded-3xl bg-indigo-700 font-semibold self-center"
               >
                 Contact me
               </button>
             </div>
           </div>
-          <div className="-mt-12 z-0 relative h-2/3 md:h-full md:w-3/5 text-white pt-12 flex items-center">
+          <div className="-mt-12 md:mt-0 z-0 relative h-3/4 md:h-full md:w-3/5 text-white pt-12 flex items-center">
             <SwedenAnimation
               fireAnimation={fireAnimation}
               setShowIntroOverlay={setShowIntroOverlay}
@@ -117,7 +117,7 @@ function App() {
             <div
               className={`${
                 showIntroOverlay ? "opacity-100" : "opacity-0"
-              } transition-all ease-in-out duration-500 relative bottom-20 introoverlay mx-auto text-gray-200 bg-gray-900 p-2 bg-opacity-80 rounded transform scale-75 sm:scale-100`}
+              } transition-all ease-in-out duration-500 relative bottom-20 introoverlay mx-auto text-gray-200 bg-gray-900 p-2 bg-opacity-80 rounded transform scale-90 sm:scale-100`}
             >
               <p>
                 I'm a developer currently based in{" "}

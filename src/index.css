@@ -11,7 +11,7 @@
 
   .introframe {
     background-color: #091858;
-    z-index: 500;
+    z-index: 200;
   }
 
   @keyframes movebackground {
@@ -30,6 +30,7 @@
 
   .projects {
     background-color: #07154e;
+    z-index: 220;
   }
 
   .triangle {
@@ -49,7 +50,7 @@
   }
 
   #contactformcontainer {
-    z-index: 200;
+    z-index: 260;
   }
 
   .graybgdiv {
@@ -85,6 +86,18 @@
     color: #bfdbfe;
     z-index: 120;
     transform: scale(0.5);
+  }
+
+  .sidebar {
+    z-index: 255;
+  }
+
+  .hamburger {
+    z-index: 260;
+  }
+
+  .hamburger > * {
+    z-index: 256;
   }
 
   .introoverlay {
@@ -191,14 +204,6 @@
     100% {
       opacity: 0;
       transform: scale(1);
-    }
-  }
-}
-
-.h-screen {
-  @supports (-webkit-appearance: none) {
-    .os-android & {
-      min-height: calc(100vh - 56px);
     }
   }
 }
