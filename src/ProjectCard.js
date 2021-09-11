@@ -13,11 +13,11 @@ function ProjectCard(props) {
           <h2 className="lowercase text-base">{props.description}</h2>
         </div>
       </div>
-      <div className={`relative flex ${isEven && "justify-end"}`}>
-        <div className="mt-5 mb-2 w-4/5">
+      <div className={`relative md:flex ${isEven && "justify-end"}`}>
+        <div className="mt-3 md:mt-5 mb-2 md:w-4/5">
           <div className="overflow-hidden">
             <ModalImage
-              className="rounded w-full h-96 transition-all duration-500 ease-in-out object-cover hover:filter-none filter saturate-0 transform hover:scale-110 cursor-pointer"
+              className="rounded w-full h-96 transition-all duration-500 ease-in-out object-cover hover:filter-none md:filter saturate-0 transform hover:scale-110 cursor-pointer"
               small={props.src}
               medium={props.src}
               alt={props.description}
@@ -27,7 +27,7 @@ function ProjectCard(props) {
           </div>
         </div>
         <div
-          className={`rounded w-72 bg-blue-900 absolute transform -translate-y-1/2 top-1/2 shadow-lg ${
+          className={`md:rounded -mx-4 mb-2 mt-4 md:m-0 md:w-72 bg-blue-900 md:absolute transform md:-translate-y-1/2 md:top-1/2 shadow-lg ${
             isEven ? "left-0" : "right-0"
           } m-auto text-sm px-5 pb-3 pt-3`}
         >

@@ -12,10 +12,12 @@ function App() {
   const [showContactForm, setShowContactForm] = useState(false);
   const [fireAnimation, setFireAnimation] = useState(true);
   const [showIntroOverlay, setShowIntroOverlay] = useState(false);
+  const [showSideBar, setShowSideBar] = useState(false);
 
   function scrollToTop() {
     if (topRef.current) {
       topRef.current.scrollIntoView({ behavior: "smooth" });
+      setShowSideBar(false);
     }
   }
 
@@ -103,7 +105,7 @@ function App() {
 
               <button
                 onClick={() => setShowContactForm(true)}
-                className="transition-all ease-in-out duration-400 hover:bg-indigo-500 py-3 px-4 text-sm my-3 rounded-3xl bg-indigo-700 font-semibold self-center"
+                className="transition-all ease-in-out duration-400 hover:bg-blue-500 py-3 px-4 text-sm my-3 rounded-3xl bg-blue-700 font-semibold self-center"
               >
                 Contact me
               </button>
@@ -144,6 +146,8 @@ function App() {
             fireAnimation={fireAnimation}
             setFireAnimation={setFireAnimation}
             scrollToTop={scrollToTop}
+            showSideBar={showSideBar}
+            setShowSideBar={setShowSideBar}
           />
         </div>
       </div>

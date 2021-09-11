@@ -90,6 +90,7 @@
 
   .sidebar {
     z-index: 255;
+    background-color: #06113c;
   }
 
   .hamburger {

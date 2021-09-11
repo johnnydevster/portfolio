@@ -13,7 +13,7 @@ function Main(props) {
   const [mainSectionInView, setMainSectionInView] = useState(false);
 
   const [projectsRef, projectsInView, projectsEntry] = useInView({
-    threshold: 0.2,
+    threshold: 0.1,
   });
   const [aboutMeRef, aboutMeInView, aboutMeEntry] = useInView({
     threshold: 0.5,
@@ -24,7 +24,6 @@ function Main(props) {
   const [backToTopRef, backToTopInView, backToTopEntry] = useInView({
     threshold: 0.5,
   });
-  const [showSideBar, setShowSideBar] = useState(true);
 
   function useOutsideAlerter(ref) {
     useEffect(() => {
@@ -32,26 +31,17 @@ function Main(props) {
        * Alert if clicked on outside of element
        */
       function handleClickOutside(event) {
-        if (ref.current && !ref.current.contains(event.target) && showSideBar) {
-          setShowSideBar(false);
+        if (ref.current && !ref.current.contains(event.target)) {
+          props.setShowSideBar(false);
           console.log("Clicked outside sidebar.");
-        }
-      }
-
-      function handleDragOutside(event) {
-        if (ref.current && !ref.current.contains(event.target) && showSideBar) {
-          setShowSideBar(false);
-          console.log("Dragged outside sidebar.");
         }
       }
 
       // Bind the event listener
       document.addEventListener("mousedown", handleClickOutside);
-      document.addEventListener("drag", handleDragOutside);
       return () => {
         // Unbind the event listener on clean up
         document.removeEventListener("mousedown", handleClickOutside);
-        document.addEventListener("drag", handleDragOutside);
       };
     }, [ref]);
   }
@@ -61,14 +51,17 @@ function Main(props) {
 
   function scrollToProjects() {
     projectsEntry.target.scrollIntoView({ behavior: "smooth" });
+    props.setShowSideBar(false);
   }
 
   function scrollToAboutMe() {
     aboutMeEntry.target.scrollIntoView({ behavior: "smooth" });
+    props.setShowSideBar(false);
   }
 
   function scrollToContact() {
     contactEntry.target.scrollIntoView({ behavior: "smooth" });
+    props.setShowSideBar(false);
   }
 
   return (
@@ -123,43 +116,43 @@ function Main(props) {
             {/*Mobile friendly navbar */}
             <div ref={sidebarRef}>
               <button
-                onClick={() => setShowSideBar(!showSideBar)}
+                onClick={() => props.setShowSideBar(!props.showSideBar)}
                 className="hamburger md:hidden w-10 h-10 p-1 absolute right-5 top-1/2 transform -translate-y-1/2 hover:bg-blue-900 hover:bg-opacity-50 cursor-pointer rounded"
               >
                 <Hamburger />
               </button>
               <ul
                 className={`transition-all duration-300 ease-in-out transform ${
-                  showSideBar ? "translate-x-0" : "translate-x-full"
-                } sidebar fixed h-screen w-1/2 top-0 right-0 bg-gray-900 flex flex-col justify-center text-2xl`}
+                  props.showSideBar ? "translate-x-0" : "translate-x-full"
+                } sidebar fixed h-screen w-1/2 top-0 right-0 flex flex-col justify-center text-2xl`}
               >
                 <li
                   onClick={scrollToProjects}
                   className={`${
-                    projectsInView ? "bg-gray-800" : ""
-                  } px-4 mb-3 duration-100 ease-in-out cursor-pointerhover:bg-blue-900 py-1 px-2 rounded`}
+                    projectsInView ? "bg-yellow-400" : ""
+                  } px-4 mb-3 duration-100 ease-in-out cursor-pointer hover:bg-yellow-300 hover:bg-opacity-30 bg-opacity-30 py-1 px-2 rounded`}
                 >
                   Projects
                 </li>
                 <li
                   onClick={scrollToAboutMe}
                   className={`${
-                    aboutMeInView && !projectsInView ? "bg-gray-800" : ""
-                  } px-4 mb-3 duration-100 ease-in-out cursor-pointerhover:bg-blue-900 py-1 px-2 rounded`}
+                    aboutMeInView && !projectsInView ? "bg-yellow-400" : ""
+                  } px-4 mb-3 duration-100 ease-in-out cursor-pointer hover:bg-yellow-300 bg-opacity-30 hover:bg-opacity-30 py-1 px-2 rounded`}
                 >
                   About Me
                 </li>
                 <li
                   onClick={scrollToContact}
                   className={`${
-                    contactInView && !aboutMeInView ? "bg-gray-800" : ""
-                  } px-4 mb-3 duration-100 ease-in-out cursor-pointerhover:bg-blue-900 py-1 px-2 rounded`}
+                    contactInView && !aboutMeInView ? "bg-yellow-400" : ""
+                  } px-4 mb-3 duration-100 ease-in-out cursor-pointer hover:bg-yellow-300 bg-opacity-30 hover:bg-opacity-30 py-1 px-2 rounded`}
                 >
                   Contact
                 </li>
                 <li
                   onClick={props.scrollToTop}
-                  className={`px-4 duration-100 ease-in-out cursor-pointerhover:bg-blue-900 py-1 px-2 rounded`}
+                  className={`px-4 duration-100 ease-in-out cursor-pointer hover:bg-yellow-300 hover:bg-opacity-30 py-1 px-2 rounded`}
                 >
                   Back to top
                 </li>
@@ -177,7 +170,7 @@ function Main(props) {
         {({ inView, ref, entry }) => (
           <div
             ref={ref}
-            className="relative md:-left-14 max-w-2xl mx-auto p-5 flex"
+            className="relative md:-left-14 max-w-2xl mx-auto p-3 sm:p-5 flex"
           >
             <SocialBar mainSectionInView={mainSectionInView} />
             <div>
@@ -207,7 +200,7 @@ function Main(props) {
               <div ref={aboutMeRef}>
                 <AboutMe />
               </div>
-              <div ref={contactRef} className="h-96 mb-96">
+              <div ref={contactRef} className="">
                 <Contact />
               </div>
               <div ref={backToTopRef} className="h-96 mb-96">

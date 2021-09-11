@@ -10,7 +10,7 @@ function Contact() {
         </div>
         <div className="w-full border-b-2 border-blue-400 border-opacity-20 ml-6 pt-1"></div>
       </div>
-      <div className="flex flex-col bg-blue-900 w-5/6 sm:4/6 px-7 py-6 sm:px-4 sm:py-6 mx-auto my-10 bg-opacity-50 rounded justify-around">
+      <div className="flex flex-col bg-blue-900 sm:4/6 p-4 sm:px-4 sm:py-6 mx-auto my-10 bg-opacity-50 rounded justify-around">
         <div className="sm:flex items-center justify-around">
           <h1 className="text-base text-white sm:w-4/6">
             If you'd like to contact me, please feel free to message me on
@@ -25,7 +25,7 @@ function Contact() {
             <LinkedIn className="w-10" />
           </a>
         </div>
-        <div className="border-t mx-2 sm:mx-5 my-4 border-blue-600 border-opacity-30"></div>
+        <div className="border-t mx-6 my-6 sm:mx-5 border-blue-600 border-opacity-30"></div>
         <div className="sm:flex items-center justify-around">
           <h1 className="text-base text-white sm:w-4/6">
             Also, follow me on GitHub to keep track of my new and exciting
@@ -41,7 +41,7 @@ function Contact() {
             <GitHub />
           </a>
         </div>
-        <div className="sm:hidden border-t mx-2 sm:mx-5 mt-4 border-blue-600 border-opacity-30"></div>
+        <div className="sm:hidden border-t mt-6 mx-6 mb-3 sm:mx-5 border-blue-600 border-opacity-30"></div>
         <div className="sm:hidden flex mt-6 mb-2 justify-center">
           <a
             href="https://www.linkedin.com/in/johnny-backlund-3b8221179/"
