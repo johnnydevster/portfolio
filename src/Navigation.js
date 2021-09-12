@@ -36,7 +36,9 @@ function Navigation(props) {
   };
 
   return (
-    <div className={`hidden md:block sticky h-20 top-1/2 text-sm`}>
+    <div
+      className={`hidden md:block sticky h-20 top-1/2 transform -translate-y-1/2 text-sm`}
+    >
       <AnimatePresence>
         {props.mainSectionInView && (
           <motion.div

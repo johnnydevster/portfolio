@@ -145,7 +145,7 @@ function ContactForm() {
           id="email"
           name="user_email"
           className="w-full h-8 mt-1 ml-3 px-2 rounded bg-gray-900 bg-opacity-30"
-          placeholder="Your email address"
+          placeholder="Email address"
           onChange={(e) => setEmail(e.target.value)}
         ></input>
       </div>

@@ -150,6 +150,19 @@ function App() {
             setShowSideBar={setShowSideBar}
           />
         </div>
+        <footer className="w-full h-24 p-2 text-xs sm:text-sm md:text-base bg-gray-900 flex justify-center">
+          <div className="flex items-center justify-between px-3 w-full md:w-4/5">
+            <div className="text-gray-300">
+              <p>This portfolio was created with React and Tailwind.</p>
+              <p className="mt-1">Hope you liked it!</p>
+            </div>
+            <p className="text-white font-semibold text-right">
+              Johnny Backlund
+              <br />
+              <span className="text-gray-400">2021</span>
+            </p>
+          </div>
+        </footer>
       </div>
     </div>
   );

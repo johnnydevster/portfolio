@@ -25,9 +25,9 @@ function Contact() {
             <LinkedIn className="w-10" />
           </a>
         </div>
-        <div className="border-t mx-6 my-6 sm:mx-5 border-blue-600 border-opacity-30"></div>
+        <div className="hidden sm:block border-t mx-6 my-6 sm:mx-10 border-blue-600 border-opacity-30"></div>
         <div className="sm:flex items-center justify-around">
-          <h1 className="text-base text-white sm:w-4/6">
+          <h1 className="mt-4 text-base text-white sm:w-4/6">
             Also, follow me on GitHub to keep track of my new and exciting
             projects!
           </h1>

@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 import AboutMe from "./AboutMe";
 import Contact from "./Contact";
 import SocialBar from "./SocialBar";
-import { GitHub, LinkedIn } from "./static/icons";
+import { GitHub, LinkedIn, ArrowDown } from "./static/icons";
 import { Hamburger } from "./static/icons";
 import { useState, useRef, useEffect } from "react";
 import { useInView, InView } from "react-intersection-observer";
@@ -33,7 +33,6 @@ function Main(props) {
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target)) {
           props.setShowSideBar(false);
-          console.log("Clicked outside sidebar.");
         }
       }
 
@@ -65,7 +64,7 @@ function Main(props) {
   }
 
   return (
-    <div className="-mt-12 md:mt-0 projects text-blue-50 text-xl relative inset-0 pt-3 pb-6 flex-col">
+    <div className="-mt-12 md:mt-0 projects text-blue-50 text-xl relative inset-0 pt-3 flex-col">
       <header
         className={`transform transition-all duration-400 ease-in-out w-full top-0 ${
           mainSectionInView ? "md:-translate-y-12" : ""
@@ -117,7 +116,9 @@ function Main(props) {
             <div ref={sidebarRef}>
               <button
                 onClick={() => props.setShowSideBar(!props.showSideBar)}
-                className="hamburger md:hidden w-10 h-10 p-1 absolute right-5 top-1/2 transform -translate-y-1/2 hover:bg-blue-900 hover:bg-opacity-50 cursor-pointer rounded"
+                className={`${
+                  props.showSideBar ? "rotate-90" : ""
+                } transition-all duration-200 ease-in-out hamburger md:hidden w-10 h-10 p-1 absolute right-5 top-1/2 transform -translate-y-1/2 hover:bg-blue-900 hover:bg-opacity-50 cursor-pointer rounded`}
               >
                 <Hamburger />
               </button>
@@ -170,7 +171,7 @@ function Main(props) {
         {({ inView, ref, entry }) => (
           <div
             ref={ref}
-            className="relative md:-left-14 max-w-2xl mx-auto p-3 sm:p-5 flex"
+            className="relative md:-left-14 max-w-2xl mx-auto px-3 pt-3 sm:px-5 sm:pt-5 flex"
           >
             <SocialBar mainSectionInView={mainSectionInView} />
             <div>
@@ -203,8 +204,19 @@ function Main(props) {
               <div ref={contactRef} className="">
                 <Contact />
               </div>
-              <div ref={backToTopRef} className="h-96 mb-96">
-                Back to top
+              <div
+                ref={backToTopRef}
+                className="mt-5 flex-col flex items-center justify-center"
+              >
+                <button
+                  onClick={props.scrollToTop}
+                  className="text-yellow-300 hover:text-yellow-200"
+                >
+                  <div className="transform rotate-180">
+                    <ArrowDown className="transition-all mx-auto mb-12 duration-400 ease-in-out bg-blue-700 bg-opacity-20 hover:bg-opacity-60 rounded-full p-2 fill-current text-yellow-400 cursor-pointer animate-bounce" />
+                  </div>
+                  <h1 className="text-center relative -top-6">Back to top</h1>
+                </button>
               </div>
             </div>
             <Navigation
