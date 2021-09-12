@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.1373acd9.chunk.css",
-    "main.js": "/static/js/main.641dcdf4.chunk.js",
-    "main.js.map": "/static/js/main.641dcdf4.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.f2b308f2.js",
-    "runtime-main.js.map": "/static/js/runtime-main.f2b308f2.js.map",
-    "static/js/2.f5000104.chunk.js": "/static/js/2.f5000104.chunk.js",
-    "static/js/2.f5000104.chunk.js.map": "/static/js/2.f5000104.chunk.js.map",
-    "static/js/3.9332282d.chunk.js": "/static/js/3.9332282d.chunk.js",
-    "static/js/3.9332282d.chunk.js.map": "/static/js/3.9332282d.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.1373acd9.chunk.css.map": "/static/css/main.1373acd9.chunk.css.map",
-    "static/js/2.f5000104.chunk.js.LICENSE.txt": "/static/js/2.f5000104.chunk.js.LICENSE.txt",
-    "static/media/Portrait2.84cb32ef.PNG": "/static/media/Portrait2.84cb32ef.PNG",
-    "static/media/chatapp_demo.605b8b13.png": "/static/media/chatapp_demo.605b8b13.png",
-    "static/media/personar_demo.de01be92.PNG": "/static/media/personar_demo.de01be92.PNG",
-    "static/media/purepadel_demo.8808ec5b.PNG": "/static/media/purepadel_demo.8808ec5b.PNG",
-    "static/media/wherewasi_demo.6fbb1118.PNG": "/static/media/wherewasi_demo.6fbb1118.PNG"
+    "main.css": "/portfolio/static/css/main.c6591a80.chunk.css",
+    "main.js": "/portfolio/static/js/main.f8317456.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.f8317456.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.a39dc4d1.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.a39dc4d1.js.map",
+    "static/js/2.f5000104.chunk.js": "/portfolio/static/js/2.f5000104.chunk.js",
+    "static/js/2.f5000104.chunk.js.map": "/portfolio/static/js/2.f5000104.chunk.js.map",
+    "static/js/3.9332282d.chunk.js": "/portfolio/static/js/3.9332282d.chunk.js",
+    "static/js/3.9332282d.chunk.js.map": "/portfolio/static/js/3.9332282d.chunk.js.map",
+    "index.html": "/portfolio/index.html",
+    "static/css/main.c6591a80.chunk.css.map": "/portfolio/static/css/main.c6591a80.chunk.css.map",
+    "static/js/2.f5000104.chunk.js.LICENSE.txt": "/portfolio/static/js/2.f5000104.chunk.js.LICENSE.txt",
+    "static/media/Portrait2.84cb32ef.PNG": "/portfolio/static/media/Portrait2.84cb32ef.PNG",
+    "static/media/chatapp_demo.605b8b13.png": "/portfolio/static/media/chatapp_demo.605b8b13.png",
+    "static/media/personar_demo.de01be92.PNG": "/portfolio/static/media/personar_demo.de01be92.PNG",
+    "static/media/purepadel_demo.8808ec5b.PNG": "/portfolio/static/media/purepadel_demo.8808ec5b.PNG",
+    "static/media/wherewasi_demo.6fbb1118.PNG": "/portfolio/static/media/wherewasi_demo.6fbb1118.PNG"
   },
   "entrypoints": [
-    "static/js/runtime-main.f2b308f2.js",
+    "static/js/runtime-main.a39dc4d1.js",
     "static/js/2.f5000104.chunk.js",
-    "static/css/main.1373acd9.chunk.css",
-    "static/js/main.641dcdf4.chunk.js"
+    "static/css/main.c6591a80.chunk.css",
+    "static/js/main.f8317456.chunk.js"
   ]
 }
