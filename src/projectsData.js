@@ -15,6 +15,7 @@ const projects = [
     src: personar,
     tech: ["Javascript", "React", "Tailwind", "Node", "Chart.js"],
     repolink: "https://github.com/johnnydevster/persona",
+    website: "https://persona-5c2e8.web.app/",
   },
   {
     name: "Where was I?",
