@@ -78,9 +78,9 @@ function App() {
       >
         <div
           onClick={() => setShowContactForm(false)}
-          className="transition-all hover:bg-blue-400 xbutton absolute w-8 h-8 rounded-full bg-blue-500 cursor-pointer right-0 md:-right-4 -top-4 text-indigo-900 leading-7 text-center"
+          className="transition-all h-6 rounded xbutton absolute cursor-pointer right-0 text-indigo-500 hover:text-indigo-400 text-center"
         >
-          <Xbutton />
+          <span class="material-icons text-xl relative -top-1">close</span>
         </div>
         <ContactForm />
       </div>

@@ -3,7 +3,13 @@ import { Screen, Database } from "./static/icons";
 //
 function AboutMe(props) {
   const frontEndSkills = ["HTML", "CSS", "React", "Sass", "Tailwind"];
-  const backEndSkills = ["Node.js", "MySQL", "Express.js", "Python", "REST"];
+  const backEndSkills = [
+    "Node.js",
+    "MySQL",
+    "Express.js",
+    "Python",
+    "Firebase",
+  ];
 
   return (
     <div>

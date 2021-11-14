@@ -23,6 +23,24 @@
     }
   }
 
+  .contactbox {
+    background-color: #091858;
+  }
+
+  .contactbox-light {
+    background-color: #112373;
+  }
+
+  .contactblock {
+    transform-style: preserve-3d;
+    background-color: #10163b;
+  }
+
+  .pin {
+    transform: translateZ(-10px);
+    border-radius: 2px;
+  }
+
   header {
     z-index: 250;
     background-color: #06113c;
@@ -37,7 +55,7 @@
     width: 0;
     height: 0;
     border-top: 9px solid transparent;
-    border-left: 25px solid rgba(30, 58, 138);
+    border-left: 25px solid rgba(18, 39, 108);
     border-bottom: 8px solid transparent;
   }
 
@@ -46,7 +64,7 @@
     height: 0;
     border-left: 9px solid transparent;
     border-right: 9px solid transparent;
-    border-top: 25px solid rgba(30, 58, 138);
+    border-top: 25px solid rgba(18, 39, 108);
   }
 
   #contactformcontainer {
@@ -123,6 +141,22 @@
   .animateout1 {
     animation: deflate 500ms ease-in-out;
     animation-fill-mode: forwards;
+  }
+
+  .glow {
+    animation: glow 1s infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 16px -3px rgba(252, 252, 252, 0.1);
+      color: #fcd34d;
+    }
+    to {
+      box-shadow: 0 0 16px 6px rgba(252, 252, 252, 0.1);
+      /*color: #fde68a;*/
+      color: #fef3c7;
+    }
   }
 
   @keyframes scaleup {

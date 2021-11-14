@@ -27,7 +27,7 @@ function ProjectCard(props) {
           </div>
         </div>
         <div
-          className={`md:rounded -mx-4 mb-2 mt-4 md:m-0 md:w-72 bg-blue-900 md:absolute transform md:-translate-y-1/2 md:top-1/2 shadow-lg ${
+          className={`md:rounded -mx-4 mb-2 mt-4 md:m-0 md:w-72 bg-blue-900 md:absolute transform md:-translate-y-1/2 md:top-1/2 shadow-xl ${
             isEven ? "left-0" : "right-0"
           } m-auto text-sm px-5 pb-3 pt-3`}
         >
@@ -57,7 +57,9 @@ function ProjectCard(props) {
                 className="flex text-yellow-300 py-1 px-2 hover:text-yellow-200"
               >
                 <p>website</p>
-                <Link className="w-6 ml-2 fill-current" />
+                <span className="w-6 ml-2 fill-current material-icons">
+                  link
+                </span>
               </a>
             )}
           </div>

@@ -1,9 +1,21 @@
 import wherewasi from "./static/wherewasi_demo.PNG";
-import messageapp from "./static/chatapp_demo.png";
 import purepadel from "./static/purepadel_demo.PNG";
 import personar from "./static/personar_demo.PNG";
+import gettingItDone from "./static/getting_it_done_demo.PNG";
 
 const projects = [
+  {
+    name: "Getting It Done",
+    description: "Fullstack To-Do Application",
+    paragraph: [
+      "Mobile-first design with social login and Firestore backend.",
+      "Users can create and delete categories and tasks, and completed tasks are optionally displayed below the display area.",
+      "Data is fetched using snapshot listeners, so all changes are instantly synced across all devices.",
+    ],
+    src: gettingItDone,
+    tech: ["React", "Tailwind", "Firestore", "Firebase Auth"],
+    website: "https://fir-test-9cd48.web.app/",
+  },
   {
     name: "Persona",
     description: "Personality test",
@@ -23,23 +35,12 @@ const projects = [
     paragraph: [
       "This project uses Google's Vision API to detect landmarks in user submitted images.",
       "If a landmark is found, it grabs some info from Wikipedia about the landmark and marks its location on an embedded Google Map.",
+      "(hosted on Heroku free dyno, it may take some time to spin up the site)",
     ],
     src: wherewasi,
     tech: ["Javascript", "React", "Node", "SCSS", "Google Vision API"],
     repolink: "https://github.com/johnnydevster/where-was-i",
     website: "https://nowwherewasi.herokuapp.com/",
-  },
-  {
-    name: "Chat app",
-    description: "Instant messaging",
-    paragraph: [
-      "An instant messaging app built in React with Socket.IO.",
-      "Users can join and leave rooms, send messages to each other and see notifications when other users join/leave.",
-      "User's own chat messages are styled differently to better differentiate users.",
-    ],
-    src: messageapp,
-    tech: ["Javascript", "React", "Node", "SCSS", "Socket.IO"],
-    repolink: "https://github.com/johnnydevster/messageapp",
   },
   {
     name: "Pure Padel",
