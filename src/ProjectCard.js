@@ -43,7 +43,7 @@ function ProjectCard(props) {
               href={props.repolink}
               target="_blank"
               rel="noreferrer"
-              className="flex text-yellow-300 py-1 hover:text-yellow-200"
+              className="flex text-yellow-300 py-1 hover:text-yellow-200 bg-gray-900 bg-opacity-50 rounded-full p-2"
             >
               <p>code</p>
               <GitHub className="w-6 ml-2 fill-current" />
@@ -54,9 +54,9 @@ function ProjectCard(props) {
                 href={props.website}
                 target="_blank"
                 rel="noreferrer"
-                className="flex text-yellow-300 py-1 px-2 hover:text-yellow-200"
+                className="flex text-yellow-300 py-1 px-2 hover:text-yellow-200 bg-gray-900 bg-opacity-50 rounded-full p-2 ml-1"
               >
-                <p>website</p>
+                <p>site</p>
                 <span className="w-6 ml-2 fill-current material-icons">
                   link
                 </span>

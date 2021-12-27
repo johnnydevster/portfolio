@@ -2,13 +2,21 @@ import me from "./static/Portrait2.PNG";
 import { Screen, Database } from "./static/icons";
 //
 function AboutMe(props) {
-  const frontEndSkills = ["HTML", "CSS", "React", "Sass", "Tailwind"];
+  const frontEndSkills = [
+    "HTML",
+    "CSS",
+    "React",
+    "Sass",
+    "Tailwind",
+    "Next.js",
+  ];
   const backEndSkills = [
     "Node.js",
     "MySQL",
     "Express.js",
     "Python",
     "Firebase",
+    "Headless CMS",
   ];
 
   return (

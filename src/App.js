@@ -155,12 +155,19 @@ function App() {
             <p className="text-white font-semibold text-right">
               Johnny Backlund
               <br />
-              <span className="text-gray-300">2021</span>
+              <span className="text-gray-300">{`${new Date().getFullYear()}`}</span>
             </p>
             <div className="border-l-2 rounded border-gray-700 border-opacity-50 h-14 m-3"></div>
             <div className="text-gray-300">
               <p>This portfolio was created using React and Tailwind.</p>
-              <p className="mt-1">Hope you liked it!</p>
+              <a
+                href="https://github.com/johnnydevster/portfolio"
+                target="_blank"
+                rel="noreferrer"
+                className="fill-current cursor-pointer hover:text-yellow-200 text-yellow-300 text-xs sm:text-sm"
+              >
+                GitHub repo
+              </a>
             </div>
           </div>
         </footer>

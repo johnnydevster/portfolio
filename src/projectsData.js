@@ -1,9 +1,22 @@
 import wherewasi from "./static/wherewasi_demo.PNG";
-import purepadel from "./static/purepadel_demo.PNG";
 import personar from "./static/personar_demo.PNG";
 import gettingItDone from "./static/getting_it_done_demo.PNG";
+import deliDelights from "./static/delidelights_demo.PNG";
 
 const projects = [
+  {
+    name: "Deli Delights",
+    description: "Headless CMS Restaurant Mockup",
+    paragraph: [
+      "A mockup of a restaurant site built with Next.js on the frontend, using WordPress as a headless CMS for the backend.",
+      "Client can easily add content on their own using the WordPress admin panel, which utilizes custom post types and GraphQL fields.",
+      "Uses Next.js dynamic routing to dynamically build news post routes.",
+    ],
+    src: deliDelights,
+    tech: ["Next.js", "Tailwind", "Headless WordPress", "GraphQL"],
+    repolink: "https://github.com/johnnydevster/restaurant-cms",
+    website: "https://restaurant-cms.vercel.app/",
+  },
   {
     name: "Getting It Done",
     description: "Fullstack To-Do Application",
@@ -14,6 +27,7 @@ const projects = [
     ],
     src: gettingItDone,
     tech: ["React", "Tailwind", "Firestore", "Firebase Auth"],
+    repolink: "https://github.com/johnnydevster/getting-it-done",
     website: "https://fir-test-9cd48.web.app/",
   },
   {
@@ -30,7 +44,7 @@ const projects = [
     website: "https://persona-5c2e8.web.app/",
   },
   {
-    name: "Where was I?",
+    name: "Where Was I?",
     description: "Landmark picture search",
     paragraph: [
       "This project uses Google's Vision API to detect landmarks in user submitted images.",
@@ -41,18 +55,6 @@ const projects = [
     tech: ["Javascript", "React", "Node", "SCSS", "Google Vision API"],
     repolink: "https://github.com/johnnydevster/where-was-i",
     website: "https://nowwherewasi.herokuapp.com/",
-  },
-  {
-    name: "Pure Padel",
-    description: "Padel racket price aggregator",
-    paragraph: [
-      "Uses a python web scraping library to scrape a number of sites selling padel rackets.",
-      "Saves data in a MySQL database and if a duplicate is found, flags the cheapest racket as a 'best deal'. ",
-      "Links to original site.",
-    ],
-    src: purepadel,
-    tech: ["Javascript", "React", "Node", "Python", "Scrapy", "MySQL"],
-    repolink: "https://github.com/johnnydevster/northernpadel",
   },
 ];
 
